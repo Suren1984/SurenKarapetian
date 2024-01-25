@@ -1,0 +1,327 @@
+{
+	"info": {
+		"_postman_id": "47b01cdc-212c-41a6-a4bd-cb5fd82e8cd4",
+		"name": "BodyMotion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7083558"
+	},
+	"item": [
+		{
+			"name": "MT Start Recorder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\": \"StartRecorder\",\r\n    \"Properties\": {     \r\n        \"Fps\": 30,\r\n        \"PatientId\": \"6686d01d-03a3-4cdb-aa61-13c2f9d1e20a\"   \r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/Command",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"Command"
+					],
+					"query": [
+						{
+							"key": "RunId",
+							"value": "{{run_id}}",
+							"disabled": true
+						},
+						{
+							"key": "SessionId",
+							"value": "{{session_id}}",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MT Stop Recorder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\": \"StopRecorder\",\r\n    \"Properties\": {        \r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/Command",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"Command"
+					],
+					"query": [
+						{
+							"key": "RunId",
+							"value": "{{run_id}}",
+							"disabled": true
+						},
+						{
+							"key": "SessionId",
+							"value": "{{session_id}}",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MT Get Latest Calculations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/GetLatestCalculations?SessionId={{session_id}}&WithImage=true&WithPositions=true&WithDistances=true",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"GetLatestCalculations"
+					],
+					"query": [
+						{
+							"key": "SessionId",
+							"value": "{{session_id}}"
+						},
+						{
+							"key": "RunId",
+							"value": "{{run_id}}",
+							"disabled": true
+						},
+						{
+							"key": "WithImage",
+							"value": "true"
+						},
+						{
+							"key": "WithPositions",
+							"value": "true"
+						},
+						{
+							"key": "WithDistances",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MT Get Latest Calculations Test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/GetLatestCalculationsTest?SessionId={{session_id}}&WithImage=true&WithPositions=true&WithDistances=true",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"GetLatestCalculationsTest"
+					],
+					"query": [
+						{
+							"key": "SessionId",
+							"value": "{{session_id}}"
+						},
+						{
+							"key": "RunId",
+							"value": "{{run_id}}",
+							"disabled": true
+						},
+						{
+							"key": "WithImage",
+							"value": "true"
+						},
+						{
+							"key": "WithPositions",
+							"value": "true"
+						},
+						{
+							"key": "WithDistances",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MT Get Latest Depth Image",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/GetLatestDepthImage?SessionId={{session_id}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"GetLatestDepthImage"
+					],
+					"query": [
+						{
+							"key": "SessionId",
+							"value": "{{session_id}}"
+						},
+						{
+							"key": "RunId",
+							"value": "{{run_id}}",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MT Get Session Calculations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/GetSessionCalculations?SessionId={{session_id}}&PatientId={{patient_id}}&WithPositions=true&WithDistances=true",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"GetSessionCalculations"
+					],
+					"query": [
+						{
+							"key": "SessionId",
+							"value": "{{session_id}}"
+						},
+						{
+							"key": "PatientId",
+							"value": "{{patient_id}}"
+						},
+						{
+							"key": "RunId",
+							"value": "{{run_id}}",
+							"disabled": true
+						},
+						{
+							"key": "WithPositions",
+							"value": "true"
+						},
+						{
+							"key": "WithDistances",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MT Download Binary Session Calcs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/DownloadCalculationsBinary?SessionId={{session_id}}&PatientId={{patient_id}}&WithPositions=true&WithDistances=true",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"DownloadCalculationsBinary"
+					],
+					"query": [
+						{
+							"key": "SessionId",
+							"value": "{{session_id}}"
+						},
+						{
+							"key": "PatientId",
+							"value": "{{patient_id}}"
+						},
+						{
+							"key": "RunId",
+							"value": "{{run_id}}",
+							"disabled": true
+						},
+						{
+							"key": "WithPositions",
+							"value": "true"
+						},
+						{
+							"key": "WithDistances",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8001",
+			"type": "string"
+		},
+		{
+			"key": "base_url",
+			"value": "https://localhost:8002",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "run_id",
+			"value": "c9b428ca-d3b2-4f89-82d3-18cf53e0d486",
+			"type": "string"
+		},
+		{
+			"key": "session_id",
+			"value": "255a9041-7803-4062-8c17-7d61ab43cd84",
+			"type": "string"
+		},
+		{
+			"key": "patient_id",
+			"value": "6686d01d-03a3-4cdb-aa61-13c2f9d1e20a",
+			"type": "string"
+		}
+	]
+}
